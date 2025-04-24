@@ -5,7 +5,7 @@ set_xmakever("2.9.4")
 includes("extern/commonlibobr")
 
 -- set project
-set_project("@ProjectName@")
+set_project("BakaQuitGameFix")
 set_version("1.0.0")
 set_license("GPL-3.0")
 
@@ -24,14 +24,14 @@ add_rules("mode.debug", "mode.releasedbg")
 add_rules("plugin.vsxmake.autoupdate")
 
 -- setup targets
-target("@ProjectName@")
+target("BakaQuitGameFix")
     -- bind local dependencies
     add_deps("commonlibobr")
 
     -- add commonlibobr plugin
     add_rules("commonlibobr.plugin", {
-        name = "@ProjectName@",
-        author = "@PluginAuthor@"
+        name = "BakaQuitGameFix",
+        author = "shad0wshayd3-TES4"
     })
 
     -- add source files
