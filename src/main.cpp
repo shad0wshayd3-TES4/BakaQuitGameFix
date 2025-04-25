@@ -10,6 +10,7 @@ namespace Hooks
 			std::thread(
 				[]()
 				{
+					std::this_thread::sleep_for(std::chrono::milliseconds(200));
 					static REL::Relocation<void (*)(void*, const wchar_t*)> USendMessage{ REL::Offset(0x0F5EE40) };
 					USendMessage(nullptr, L"UGameEngine::HandleExitCommand");
 				})
