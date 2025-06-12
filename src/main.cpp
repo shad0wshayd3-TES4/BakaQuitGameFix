@@ -4,7 +4,7 @@ namespace Hooks
 	{
 		static bool QuitGame()
 		{
-			static REL::Relocation<void (*)(const char*, ...)> ConsolePrint{ REL::Offset(0x6568220) };
+			static REL::Relocation<void (*)(const char*, ...)> ConsolePrint{ REL::ID(405081) };
 			ConsolePrint("Bye.");
 
 			std::thread(
@@ -21,7 +21,7 @@ namespace Hooks
 
 	static void Install()
 	{
-		static REL::Relocation target{ REL::Offset(0x6A10DE0) };
+		static REL::Relocation target{ REL::ID(421527) };
 		target.replace_func(0x21, QuitGame);
 	}
 }
